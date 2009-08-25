@@ -1,0 +1,7 @@
+This is webmachine version of Hughes Waroquier's 'Sticky Notes' tutorial. The orginal is accessible at http://beebole.com/en/blog/erlang/tutorial-web-application-erlang
+
+Justin Sheehy posted here his webmachine version of a small but fun web application created originally in mochiweb by Hughes from BeeBole. Hughes posted it in a form of neat screencast tutorial. It’s worth watching.
+
+Justin’s version is dated from October 22, 2008 and at that time webmachine version was < 1.0. Since that time the webmachine progressed and API has changed. Moreover, Justin's great example is not a single file but rather code in-lined with post prose. His code has the static content delivery mixed-up with sticky notes resource. It also contained a security issue, which is using list_to_atom bif with arbitrary arguments coming from API user, potentially opening door to blow our erlang VM’s memory up (running out of atoms).
+
+Recently I was asked by my friend to introduce him Erlang webdevelopment. I though immediately about webmachine and the sweet sticky notes tutorial so I decided to create working code of that stuff. I have reused my static resource for webmachine resulting in having separation of Ajax API and static content delivery, reducing the original stickyNotes_webresource.erl to 18 lines of code ;) 
